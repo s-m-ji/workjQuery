@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02_요소선택(기본선택자).html</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../resources/js/jquery-3.7.0.js"></script>
+  </head>
+  <body>
+    <h1>기본선택자를 이용한 요소 선택</h1>
+
+    <p>특정 아이디값을 가진 요소 "하나만"을 선택하고자 할 때</p>
+
+    <h2 id="t1">TEST_1 (JavaScript)</h2>
+    <h2 id="t2">TEST_2 (jQuery)</h2>
+
+    <script>
+      $(document).ready(function () {
+        document.querySelector("#t1").style.color = "royalblue";
+
+        $("#t2").css("color", "yellowgreen");
+
+        console.log("1. ", document.querySelector("#t1"));
+        console.log("2. ", t2);
+        console.log("3. ", $("#t2"));
+
+        $("#t1").html("<i>.html()</i>");
+        $("#t2").text("<i>.text()</i>");
+      });
+    </script>
+
+    <hr />
+
+    <h3 id="h3">태그 선택자</h3>
+
+    <p>한 페이지가 될 수 있게</p>
+    <p>예뻤어</p>
+    <p>zombie</p>
+
+    <h6>데</h6>
+    <h6>이</h6>
+    <h6>6</h6>
+
+    <script>
+      $("h6").css("color", "orange");
+
+      $("p, h6, #h3").css("background", "#ddd");
+
+      console.log("4. ", $("h6"));
+      /*
+      $(document).ready(function () { });
+        안에서 쓰인 코드가 아니어서 곧바로 실행되기에 콘솔창에서 제일 위에 출력되는 것을 확인할 수 있다.
+    */
+    </script>
+
+    <hr />
+
+    <h3>클래스 선택자</h3>
+
+    <h2 class="item">c1</h2>
+    <h2 class="item select">c2</h2>
+    <h2 class="item select">c3</h2>
+
+    <script>
+      $(function () {
+        $(".select").css({ background: "lavender", cursor: "pointer" });
+
+        $(".select").click(function () {
+          console.log("jQuery enevt");
+        });
+      });
+    </script>
+  </body>
+</html>

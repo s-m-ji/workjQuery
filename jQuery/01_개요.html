@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>01_개요.html</title>
+    <!-- 내장 파일로 연결 -->
+    <script src="../resources/js/jquery-3.7.0.js"></script>
+    <script>
+      console.log("jQuery");
+
+      jQuery(document).ready(function () {
+        console.log("jQuery(document).ready(function(){ })");
+      });
+
+      $(document).ready(function () {
+        console.log("$(document).ready(function(){ })");
+      });
+
+      $(function () {
+        console.log("$(function(){ })");
+        // css 선택자를 이용
+        /*
+            $(선택자).css(속성, 값)
+        */
+        $("body").css("padding", "20px");
+        $("h2").css({ backgroundColor: "royalblue", color: "#fff" });
+        $("#test").css({
+          width: "100px",
+          height: "100px",
+          background: "royalblue",
+          color: "#fff",
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h2>jQuery</h2>
+    <pre>
+        jQuery는 웹  개발에서 자주 사용되는 JavaaScript 라이브러리
+        HTML 문서의 조작, 이벤트 처리, 애니메이션, AJAX 요청 등을 간단하고 효율적으로 처리
+    </pre>
+    <h3>jQuery 라이브러리 연결 방법</h3>
+    <pre>
+        1) 파일
+        2) 링크(CDN 방식)                                             
+    </pre>
+    <h3>jQuery 실행</h3>
+    <pre>
+        window.onload = function(){
+            // 실행 내용
+        }
+
+        window.onload 요소가 다 로딩되고 외부 문서들도 다 가지고 온 뒤에 실행됨.
+        한번만 실행 가능하며 마지막 것만 적용됨.
+        * 이벤트 핸들러를 이용하면 여러번 적용 가능
+    </pre>
+    <div id="test"></div>
+  </body>
+</html>

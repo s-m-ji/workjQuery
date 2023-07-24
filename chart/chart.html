@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <title>chart</title>
+  </head>
+  <body>
+    <h2>월별 가입 현황</h2>
+    <div>
+      <canvas id="myChart" width="350px" height="200px"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.0/dist/chart.umd.min.js"></script> -->
+    <script>
+      // 차트를 보여줄 요소를 선택
+      const ctx = document.getElementById("myChart");
+
+      // 차트  생성
+      new Chart(ctx, {
+        // type: 그래프의 종류 (bar: 막대 그래프, line: 선 그래프)
+        type: "line",
+        data: {
+          // 하단 레이블
+          // labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          labels: [
+            "1月",
+            "2月",
+            "3月",
+            "4月",
+            "5月",
+            "6月",
+            "7月",
+            "8月",
+            "9月",
+            "10月",
+            "11月",
+            "12月",
+          ],
+          datasets: [
+            {
+              // 상단 레이블
+              // label: "# of Votes",
+              label: "# 가입자 수",
+              data: [102, 9, 23, 35, 52, 23, 55, 33, 100, 105, 107, 150],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          responsive: false, // 사이즈 조정
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
